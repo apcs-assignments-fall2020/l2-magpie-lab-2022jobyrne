@@ -42,11 +42,19 @@ public class Magpie
         {
             response = "Tell me more about your family.";
         }
-        else
+        //HERE IS CODE MY CODE
+        else if (statement.indexOf("dog") >= 0
+         || statement.indexOf("cat") >= 0)
+        {
+            response = "Tell me more about your pets!";
+        }
+
+        else 
         {
             response = getRandomResponse();
         }
         return response;
+        
     }
     
     /**
@@ -90,6 +98,14 @@ public class Magpie
     // The method returns the index of the first character in word
     // if it is found, and returns -1 otherwise. 
     public int findWord(String str, String word) {
+        if (str.indexOf(word) > -1)
+        {
+            return (str.indexOf(word));
+        }
+        if (str.indexOf(word) == 1)
+        {
+            return -1;
+        }
         return -1;
     }
 
