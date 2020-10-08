@@ -54,7 +54,22 @@ public class Magpie
         {
             response = "what grade are you in?";
         }
-
+        else if (findWord(statement, " " + "I want" + " ") >= 0)
+        {
+            response = (transformIWantStatement(statement));
+        }
+        else if (findWord(statement, ("I" + " ") + ("you")) >= 0)
+        {
+            response = (transformIYouStatement(statement));
+        }
+        else if (findWord(statement, ("I want to" + " ")) >= 0)
+        {
+            response = (transformIWantToStatement(statement));
+        }
+        else if (findWord(statement, ("you") + ("me")) >= 0)
+        {
+            response = (transformYouMeStatement(statement));
+        }
         //HERE IS CODE MY CODE
         else if (findWord(statement, "dog") >= 0
          || findWord(statement, "cat") >= 0)
@@ -145,8 +160,19 @@ public class Magpie
      */
     public String transformIWantStatement(String statement)
     {
+        String response = " ";
+        //System.out.println("\t" + statement);
+        if (findWord(statement, "I want") >= 0)
+        {
+            return "Would you really be happy if you had" + statement.substring("I want".length(), statement.length()) + "?";
+        }
+        else
+        {
+            return "failed";
+        }
+        
         //your code here
-        return "";
+        //return response;
     }
 
     /**
@@ -157,8 +183,15 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
+        String response = " ";
+        if (findWord(statement, "I") >= 0) + (findWord(statement, "you") >= 0)
+            {
+            response = "Why do you " + statement + "me?";
+            }
+        
         //your code here
-        return "";
+        return response;
+        //return "";
     }
 
     /**
@@ -169,8 +202,13 @@ public class Magpie
      */
     public String transformIWantToStatement(String statement)
     {
-        // your code here
-        return "";
+        String response = " ";
+        if (findWord(statement, ("I want to")) >= 0)
+        {
+            response = "I want to" + statement.substring("I want".length(), statement.length()) + ".";
+        }
+        //your code here
+        return response;
     }
 
 
@@ -184,7 +222,12 @@ public class Magpie
      */
     public String transformYouMeStatement(String statement)
     {
-        // your code here
-        return "";
+        String response = " ";
+        if (findWord(statement, ("you") + ("me")) >= 0)
+        {
+            response = "What makes you think that I " + statement + " you?";
+        }
+        //your code here
+        return response;
     }
 }
