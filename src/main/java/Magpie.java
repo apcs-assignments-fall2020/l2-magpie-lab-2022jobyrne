@@ -42,6 +42,19 @@ public class Magpie
         {
             response = "Tell me more about your family.";
         }
+        else if (statement.indexOf("rainbows") >= 0)
+        {
+            response = "What is your favorite colour in the rainbow?";
+        }
+        else if (statement.indexOf("cows") >= 0)
+        {
+            response = "mooooo";
+        }
+        else if (statement.indexOf("school") >= 0)
+        {
+            response = "what grade are you in?";
+        }
+
         //HERE IS CODE MY CODE
         else if (statement.indexOf("dog") >= 0
          || statement.indexOf("cat") >= 0)
@@ -84,6 +97,15 @@ public class Magpie
         {
             response = "You don't say.";
         }
+        else if (whichResponse == 4)
+        {
+            response = "That is interesting!";
+        }
+        else if (whichResponse == 5)
+        {
+            response = "Cool beans.";
+        }
+
     
         return response;
     }
@@ -97,16 +119,19 @@ public class Magpie
 
     // The method returns the index of the first character in word
     // if it is found, and returns -1 otherwise. 
-    public int findWord(String str, String word) {
-        if (str.indexOf(word) > -1)
-        {
-            return (str.indexOf(word));
+    public int findWord(String str, String word)
+     {
+        if (str.indexOf(word) != 1)
+         {
+        String str2 = " " + str.toUpperCase() + " ";
+        String word2 = " " + word.toUpperCase() + " "; 
+        
+        return str2.indexOf(word2);
         }
-        if (str.indexOf(word) == 1)
+        else 
         {
             return -1;
         }
-        return -1;
     }
 
     
