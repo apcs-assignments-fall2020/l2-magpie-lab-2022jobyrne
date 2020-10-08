@@ -31,33 +31,33 @@ public class Magpie
     public String getResponse(String statement)
     {
         String response = "";
-        if (statement.indexOf("no") >= 0)
+        if (findWord(statement, "no") >= 0)
         {
             response = "Why so negative?";
         }
-        else if (statement.indexOf("mother") >= 0
-                || statement.indexOf("father") >= 0
-                || statement.indexOf("sister") >= 0
-                || statement.indexOf("brother") >= 0)
+        else if (findWord(statement, "mother") >= 0
+                || findWord(statement, "father") >= 0
+                || findWord(statement, "sister") >= 0
+                || findWord(statement, "brother") >= 0)
         {
             response = "Tell me more about your family.";
         }
-        else if (statement.indexOf("rainbows") >= 0)
+        else if (findWord(statement, "rainbows") >= 0)
         {
             response = "What is your favorite colour in the rainbow?";
         }
-        else if (statement.indexOf("cows") >= 0)
+        else if (findWord(statement, "cows") >= 0)
         {
             response = "mooooo";
         }
-        else if (statement.indexOf("school") >= 0)
+        else if (findWord(statement, "school") >= 0)
         {
             response = "what grade are you in?";
         }
 
         //HERE IS CODE MY CODE
-        else if (statement.indexOf("dog") >= 0
-         || statement.indexOf("cat") >= 0)
+        else if (findWord(statement, "dog") >= 0
+         || findWord(statement, "cat") >= 0)
         {
             response = "Tell me more about your pets!";
         }
