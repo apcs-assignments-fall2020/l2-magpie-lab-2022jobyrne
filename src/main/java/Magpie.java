@@ -184,11 +184,13 @@ public class Magpie
     public String transformIYouStatement(String statement)
     {
         String response = " ";
-        if (findWord(statement, "I") >= 0) + (findWord(statement, "you") >= 0)
+        if (findWord(statement, "I") >= 0)
+        {
+        if (findWord(statement, "you") >= 0)
             {
-            response = "Why do you " + statement + "me?";
+            response = "Why do you" + statement.substring("I".length(), statement.indexOf("you")) + "me?";
             }
-        
+        }
         //your code here
         return response;
         //return "";
@@ -205,7 +207,7 @@ public class Magpie
         String response = " ";
         if (findWord(statement, ("I want to")) >= 0)
         {
-            response = "I want to" + statement.substring("I want".length(), statement.length()) + ".";
+            return "What would it mean to" + statement.substring("I want to".length(), statement.length()) + "?";
         }
         //your code here
         return response;
@@ -223,9 +225,14 @@ public class Magpie
     public String transformYouMeStatement(String statement)
     {
         String response = " ";
-        if (findWord(statement, ("you") + ("me")) >= 0)
+        String substring = " ";
+        if (findWord(statement, "you") >= 0)
         {
-            response = "What makes you think that I " + statement + " you?";
+        if (findWord(statement, "me") >= 0)
+            {
+            substring = statement.substring(" you  ".length(), statement.indexOf("me"));
+            response = "What makes you think that I" + substring + "you?";
+            }
         }
         //your code here
         return response;
